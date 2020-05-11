@@ -19,10 +19,6 @@ public interface ParkingSpot {
 	public boolean isParkingAvailable();
 	public void setParkingAvailable(boolean isParkingAvailable);
 	
-	//Parking indicator for calculating price
-	public int getPriceInd();
-	public void setPriceInd(int priceInd);
-	
 	//Parking id
 	public int getParkingId();
 	public void setParkingId(int parkingId);

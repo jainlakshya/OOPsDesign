@@ -7,8 +7,12 @@ public abstract class ParkingSpotImpl implements ParkingSpot{
 	private int parkingId;
 	private int parkingSpotDiameterinMeters;
 	private int parkingLevel;
-	private static boolean isParkingAvailable;
-	private int priceInd;
+	private boolean isParkingAvailable;
+	
+	//Strategy Pattern
+	private PaymentAlgorithm paymentAlgorithm;
+	////
+	
 	private Vehicle vehicleParked;
 
 	public abstract int getParkingPrice(); 
@@ -36,7 +40,7 @@ public abstract class ParkingSpotImpl implements ParkingSpot{
 	@Override
 	public boolean isParkingAvailable() {
 		// TODO Auto-generated method stub
-		return ParkingSpotImpl.isParkingAvailable;
+		return this.isParkingAvailable;
 	}
 
 	public void setParkingSpotDiameterinMeters(int parkingSpotDiameterinMeters) {
@@ -48,15 +52,7 @@ public abstract class ParkingSpotImpl implements ParkingSpot{
 	}
 
 	public void setParkingAvailable(boolean isParkingAvailable) {
-		ParkingSpotImpl.isParkingAvailable = isParkingAvailable;
-	}
-
-	public int getPriceInd() {
-		return priceInd;
-	}
-
-	public void setPriceInd(int priceInd) {
-		this.priceInd = priceInd;
+		this.isParkingAvailable = isParkingAvailable;
 	}
 
 	public int getParkingId() {
@@ -65,6 +61,14 @@ public abstract class ParkingSpotImpl implements ParkingSpot{
 
 	public void setParkingId(int parkingId) {
 		this.parkingId = parkingId;
+	}
+
+	public PaymentAlgorithm getPaymentAlgorithm() {
+		return paymentAlgorithm;
+	}
+
+	public void setPaymentAlgorithm(PaymentAlgorithm paymentAlgorithm) {
+		this.paymentAlgorithm = paymentAlgorithm;
 	}
 
 

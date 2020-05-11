@@ -4,7 +4,8 @@ public class CommercialParkingSpot extends ParkingSpotImpl{
 
 	
 	public int getParkingPrice() {
-		int price = this.getPriceInd()*20;
+		//Strategy Pattern
+		int price = this.getPaymentAlgorithm().paymentAlgo()*20;
 				
 		return price;
 	}
